@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        window.onload = function (){
+            alert("@ViewBag.Message");
+        }
+    </script>
+}
+
+<div class="row">
+<div class="col-md">
+    <form id="frmValidar" asp-action="ValidarTexto" asp-controller="Home"
+        method="POST" data-ajax="true">
+
+        @Html.TextBox("Contrasena", null)
+        @Html.TextBox("RepiteContrasena", null)
+
+        <button class="btn btn-danger" type="submit">Validar</button>
+    </form>
+    </div>
+</div>
